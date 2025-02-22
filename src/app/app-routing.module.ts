@@ -7,12 +7,15 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { ComponentsModule } from "./components/components.module";
+import { ShopsComponent } from "./pages/shops/shops.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "shops", pathMatch: "full" },
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
+  { path: "shops", component: ShopsComponent },
   { path: "landing", component: LandingpageComponent }
 ];
 
@@ -20,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
+    ComponentsModule,
     RouterModule.forRoot(routes, {
       useHash: true
     })

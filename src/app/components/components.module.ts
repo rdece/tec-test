@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -16,18 +16,18 @@ import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
+import { ShopCardComponent } from "./shop-card/shop-card.component";
 
-import { IndexComponent } from "./index/index.component";
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
-import { ShopsComponent } from './shops/shops.component';
-import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
+  declarations: [
+    ShopCardComponent
+  ],
+  exports: [
+    ShopCardComponent
+  ],
   imports: [
     CommonModule,
-    ComponentsModule,
     BrowserModule,
     FormsModule,
     RouterModule,
@@ -42,23 +42,8 @@ import { ComponentsModule } from "../components/components.module";
     AlertModule.forRoot(),
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
-  declarations: [
-    IndexComponent,
-    ShopsComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent,
-    ShopsComponent
-  ],
-  exports: [
-    IndexComponent,
-    ShopsComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent
-  ],
-  providers: []
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class PagesModule {}
+export class ComponentsModule {}

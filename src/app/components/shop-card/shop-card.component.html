@@ -1,0 +1,29 @@
+<!-- TARJETA  -->
+<div class="wrapper" (click)="goToShopDetail()">
+  <div class="card card-coin card-plain">
+    <div class="card-header">
+      <img
+        class="img-center img-fluid "
+        src="{{shop.image_background}}"
+      />
+
+      <h4 class="title text-center">{{ shop.name | titlecase }}</h4>
+    </div>
+    <div class="card-body">
+      <div class="content-wrapper">
+        <div class="info-wrapper d-flex justify-content-center">
+          <p class="profile-description font-weight-bold">{{ shop.games_count |  number: '1.0-0'}} Juegos disponibles</p>
+        </div>
+        <div class="info-wrapper d-flex justify-content-center">
+          <a
+            class="btn btn-icon btn-dribbble btn-round mr-1"
+            href= "https://{{shop.domain}}"
+            target="_blank"
+          >
+            <i class="tim-icons icon-double-right"> </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
