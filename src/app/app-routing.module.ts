@@ -9,6 +9,7 @@ import { RegisterpageComponent } from "./pages/examples/registerpage/registerpag
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ComponentsModule } from "./components/components.module";
 import { ShopsComponent } from "./pages/shops/shops.component";
+import { ShopDetailComponent } from "./pages/shop-detail/shop-detail.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "shops", pathMatch: "full" },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "shops", component: ShopsComponent },
-  { path: "landing", component: LandingpageComponent }
+  { path: "landing", component: LandingpageComponent },
+  { path: 'shop-detail', component: ShopDetailComponent }
 ];
 
 @NgModule({

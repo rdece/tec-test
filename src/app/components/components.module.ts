@@ -17,14 +17,17 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 import { ShopCardComponent } from "./shop-card/shop-card.component";
+import { GameCardComponent } from './game-card/game-card.component';
 
 
 @NgModule({
   declarations: [
-    ShopCardComponent
+    ShopCardComponent,
+    GameCardComponent
   ],
   exports: [
-    ShopCardComponent
+    ShopCardComponent,
+    GameCardComponent
   ],
   imports: [
     CommonModule,

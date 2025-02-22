@@ -23,6 +23,7 @@ import { RegisterpageComponent } from "./examples/registerpage/registerpage.comp
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { ShopsComponent } from './shops/shops.component';
 import { ComponentsModule } from "../components/components.module";
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { ComponentsModule } from "../components/components.module";
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    ShopsComponent
+    ShopsComponent,
+    ShopDetailComponent
   ],
   exports: [
     IndexComponent,

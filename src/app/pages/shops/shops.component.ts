@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Shop } from 'src/app/interfaces/commons/Shop';
 import { ResponseShopsList } from 'src/app/interfaces/responses/ResponseShopsList';
+import { LocalStorageService } from 'src/app/services/commons/local-storage.service';
 import { ShopsService } from 'src/app/services/commons/shops.service';
 
 @Component({
@@ -16,7 +18,9 @@ export class ShopsComponent implements OnInit {
   getShopsList$: Subscription = new Subscription();
 
   constructor(
-    private shopsService: ShopsService
+    private shopsService: ShopsService,
+    private router: Router,
+    private localStorage: LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -36,8 +40,9 @@ export class ShopsComponent implements OnInit {
     })
   }
 
-  goShopDetail(event: Shop){
-    console.log(JSON.stringify(event.id))
+  goShopDetail(shop: Shop){
+    this.localStorage.setItem("selectedShop", JSON.stringify(shop))
+    this.router.navigate(['/shop-detail']);
   }
 
 }
