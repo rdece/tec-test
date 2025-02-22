@@ -6,6 +6,7 @@ import { Game } from 'src/app/interfaces/commons/Game';
 import { GameDetail } from 'src/app/interfaces/commons/GameDetail';
 import { ShopDetail } from 'src/app/interfaces/commons/ShopDetail';
 import { LocalStorageService } from 'src/app/services/commons/local-storage.service';
+import { ModalsService } from 'src/app/services/commons/modals.service';
 import { ShopsService } from 'src/app/services/commons/shops.service';
 
 @Component({
@@ -20,13 +21,12 @@ export class ShopDetailComponent implements OnInit {
   gamesList : Game[] = [];
   shopDetail: ShopDetail;
   getShopDetail$: Subscription = new Subscription();
-  gameDetail: GameDetail;
   modalRef: BsModalRef;
 
   constructor(
     private localStorage: LocalStorageService,
     private shopsService: ShopsService,
-    private modalService: BsModalService
+    private modalsService: ModalsService
     ) { }
 
   ngOnInit(): void {
@@ -46,16 +46,11 @@ export class ShopDetailComponent implements OnInit {
     })
   }
 
-  openModal(template: TemplateRef<any>){
-    this.modalRef = this.modalService.show(template);
-  }
-
   showGameInfo(game: Game){
     this.getShopDetail$ = this.shopsService.getGameDetail(game.id).subscribe({
       next: async (response: GameDetail) => {
         if (response != null ){
-          this.gameDetail = response;
-          this.modal.nativeElement.show();
+          this.modalsService.alert(response).subscribe((answer) => {});
         } 
         else {
           return null;

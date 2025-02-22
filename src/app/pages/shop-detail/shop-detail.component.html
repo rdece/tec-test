@@ -80,8 +80,8 @@
                         <td>{{ game.name | titlecase }}</td>
                         <td class="td-actions text-right">
                             <button class="btn btn-primary btn-round"
-                            (click)="openModal(gameModal)">
-                                <i class="tim-icons icon-controller"></i> Ver mas
+                            (click)="showGameInfo(game)">
+                                <i class="tim-icons icon-controller"></i> Ver más
                                 </button>
                         </td>
                     </tr>
@@ -93,16 +93,3 @@
     </div>
   </div>
 </div>
-
-
-<ng-template #gameModal>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">Modal</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        This is a modal.
-    </div>
-</ng-template>

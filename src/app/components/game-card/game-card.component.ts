@@ -9,9 +9,7 @@ import { GameDetail } from 'src/app/interfaces/commons/GameDetail';
 })
 export class GameCardComponent implements OnInit {
 
-  @Input('game') gameDetail: GameDetail;
-  title: string;
-  message: string;
+  gameDetail: GameDetail;
 
   constructor( public bsModalRef: BsModalRef) { }
 

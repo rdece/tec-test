@@ -24,6 +24,7 @@ import { LandingpageComponent } from "./examples/landingpage/landingpage.compone
 import { ShopsComponent } from './shops/shops.component';
 import { ComponentsModule } from "../components/components.module";
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
+import { GameCardComponent } from "../components/game-card/game-card.component";
 
 @NgModule({
   imports: [
@@ -61,6 +62,9 @@ import { ShopDetailComponent } from './shop-detail/shop-detail.component';
     RegisterpageComponent,
     LandingpageComponent
   ],
-  providers: []
+  providers: [],
+  entryComponents: [
+    GameCardComponent
+  ]
 })
 export class PagesModule {}

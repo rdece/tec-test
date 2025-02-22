@@ -1,47 +1,37 @@
-<div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header justify-content-center">
-        <button
-          aria-hidden="true"
-          class="close"
-          data-dismiss="modal"
-          type="button"
-        >
-          <i class="tim-icons icon-simple-remove"> </i>
-        </button>
-        <h4 class="title title-up">{{gameDetail.name | titlecase}}</h4>
-      </div>
-      <div class="modal-body">
-        <p>{{gameDetail.released}}</p>
-        <div class="innie" [innerHTML]="gameDetail.description"></div>
-        <carousel [showIndicators]="true">
-            <slide>
-              <img
-                alt="First slide"
-                class="d-block"
-                src="{{gameDetail.background_image}}"
-              />
-            </slide>
-            <slide *ngIf="gameDetail.background_image_additional">
-              <img
-                alt="Second slide"
-                class="d-block"
-                src="{{gameDetail.background_image_additional}}"
-              />
-            </slide>
-          </carousel>
-          <div class="progress-container progress-primary">
-            <span class="progress-badge"> Rating: </span>
-            <progressbar class="progress-bar-primary" [value]="60">
-              <span class="progress-value"> 60% </span>
-            </progressbar>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-danger" data-dismiss="modal" type="button">
-          Close
-        </button>
-      </div>
-    </div>
+<div class="modal-header">
+  <h4 class="modal-title">{{ gameDetail.name | titlecase }}</h4>
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ gameDetail.released }}</p>
+  <div class="innie" [innerHTML]="gameDetail.description"></div>
+  <carousel [showIndicators]="true">
+    <slide>
+      <img
+        alt="First slide"
+        class="d-block"
+        src="{{ gameDetail.background_image }}"
+      />
+    </slide>
+    <slide *ngIf="gameDetail.background_image_additional">
+      <img
+        alt="Second slide"
+        class="d-block"
+        src="{{ gameDetail.background_image_additional }}"
+      />
+    </slide>
+  </carousel>
+  <div class="progress-container progress-primary">
+    <span class="progress-badge"> Rating: </span>
+    <progressbar class="progress-bar-primary" [value]="gameDetail.metacritic">
+      <span class="progress-value"> {{gameDetail.metacritic}}% </span>
+    </progressbar>
   </div>
-  
+</div>
