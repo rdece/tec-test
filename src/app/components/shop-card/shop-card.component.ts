@@ -23,4 +23,8 @@ export class ShopCardComponent implements OnInit {
     this.goShopDetailPressed$.emit(this.shop)
   }
 
+  goToStore(url: string){
+    window.open("https://" + url, "_blank");
+  }
+
 }

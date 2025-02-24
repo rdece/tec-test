@@ -14,13 +14,17 @@
           <p class="profile-description font-weight-bold">{{ shop.games_count |  number: '1.0-0'}} Juegos disponibles</p>
         </div>
         <div class="info-wrapper d-flex justify-content-center">
-          <a
+          <!-- <a
             class="btn btn-icon btn-dribbble btn-round mr-1"
             href= "https://{{shop.domain}}"
             target="_blank"
           >
             <i class="tim-icons icon-double-right"> </i>
-          </a>
+          </a> -->
+          <button class="btn btn-primary btn-round"
+                            (click)="goToStore(shop.domain); $event.stopPropagation()">
+                                Ir a la store  <i class="tim-icons icon-double-right"></i>
+                                </button>
         </div>
       </div>
     </div>
